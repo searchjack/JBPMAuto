@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="leave" xmlns="http://jbpm.org/4.3/jpdl">
+   <start g="196,25,48,48" name="start1">
+      <transition to="申请"/>
+   </start>
+   <task assignee="owner" g="172,108,92,52" name="申请">
+      <transition to="经理审批"/>
+   </task>
+   <task assignee="manager" g="171,217,92,52" name="经理审批">
+      <transition g="128,221;124,165:-42,-18" name="驳回" to="申请"/>
+      <transition g="-35,-5" name="批准" to="老板审批"/>
+   </task>
+   <task assignee="boss" g="175,302,92,52" name="老板审批">
+      <transition g="305,287;305,164:14,-7" name="重新申请" to="申请"/>
+      <transition name="批准" to="end1" g="-34,-11"/>
+   </task>
+   <end g="199,410,48,48" name="end1"/>
+</process>

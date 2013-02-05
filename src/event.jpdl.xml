@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="event" xmlns="http://jbpm.org/4.3/jpdl">
+	<on event="start">
+		<event-listener class="com.family168.OnProcessStart"/>
+	</on>
+	<on event="end">
+		<event-listener class="com.family168.OnProcessEnd"/>
+	</on>
+
+	<start g="162,41,48,48" name="start1">
+		<on event="start">
+			<event-listener class="com.family168.OnStart1Start"/>
+		</on>
+		<on event="end">
+			<event-listener class="com.family168.OnStart1End"/>
+		</on>
+		<transition g="-49,-18" name="to state1" to="state1"/>
+	</start>
+	<state g="131,155,92,52" name="state1">
+		<on event="start">
+			<event-listener class="com.family168.OnState1Start"/>
+		</on>
+		<on event="end">
+			<event-listener class="com.family168.OnState1End"/>
+		</on>
+		<transition g="-42,-18" name="to end1" to="end1"/>
+	</state>
+	<end g="173,278,48,48" name="end1">
+		<on event="start">
+			<event-listener class="com.family168.OnEnd1Start"/>
+		</on>
+		<on event="end">
+			<event-listener class="com.family168.OnEnd1End"/>
+		</on>
+	</end>
+</process>

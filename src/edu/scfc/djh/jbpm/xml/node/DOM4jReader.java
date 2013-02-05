@@ -296,8 +296,25 @@ public class DOM4jReader
             }
         }
 
-        return null;        
+        return null;
     }
+    
+	public JBPMNode getCurrentNode(String name, String g) {
+		if(JBPMNode.getNodeTree().size() != 0)
+        {
+            Iterator<JBPMNode> iterTree = JBPMNode.getNodeTree().iterator();
+            while(iterTree.hasNext())
+            {
+                JBPMNode nextNodes = iterTree.next();
+                if(nextNodes.getName().equals(name) && nextNodes.getG().equals(g))
+                {
+                    return nextNodes;
+                }
+            }
+        }
+
+        return null;
+	}
 
 
 
@@ -375,5 +392,6 @@ public class DOM4jReader
 //        }
 
     }
+
 }
 

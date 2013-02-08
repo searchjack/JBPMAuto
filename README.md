@@ -2,6 +2,9 @@ AutoJBPM
 
 	本项目是以 JBPM4 为基础，做出能够让用户自己定义比较完善的办公流程.
 	
+	运行项目
+		autojbpm.src.edu.scfc.djh.jbpm.run.RunAutoJBPMTest -> dploy 方法
+		jdk 1.6 可运行，其它未测试
 	
 	起始
 		项目真正的开始时间为2012 年毕业设计命题结束后不久.    <很多具体时间还有待核实，我这人对时间不敏感>
